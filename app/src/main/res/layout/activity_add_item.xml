@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.msu.hannanma.spartahack.MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header"
+        android:background="@android:color/holo_blue_light"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo"
+            android:id="@+id/imageView2"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="GrocerEase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/title"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@android:color/background_light"
+            android:textScaleX="2"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/mainContent"
+        android:background="@drawable/background">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:ems="10"
+                    android:id="@+id/editDays"
+                    android:layout_toRightOf="@+id/textDays"
+                    android:layout_below="@+id/editName"
+                    android:hint="Number of days" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/editPrice"
+                    android:layout_toRightOf="@+id/textPrice"
+                    android:layout_below="@+id/editDays"
+                    android:hint="$" />
+
+                <TextView
+                    android:text="Item Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textName"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="true"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="Frequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textDays"
+                    android:layout_below="@+id/textName"
+                    android:layout_alignRight="@+id/textName"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:layout_marginBottom="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:text="Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textPrice"
+                    android:layout_below="@+id/textDays"
+                    android:layout_alignRight="@+id/textName"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:textStyle="bold"
+                    android:hint="$" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/editName"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/textName"
+                    android:hint="ex. bread" />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:text="Add Item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/add"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textStyle="normal|bold"
+                android:scaleY="2"
+                android:padding="20dp"
+                android:onClick="onAdd" />
+
+            <Button
+                android:text="Cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/done"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textStyle="normal|bold"
+                android:scaleY="2"
+                android:padding="20dp"
+                android:onClick="onCancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
